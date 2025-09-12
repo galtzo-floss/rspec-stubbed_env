@@ -39,8 +39,8 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.summary = "Unobtrusively stub ENV keys and values during testing"
-  spec.description = %[Stub or hide environment variables in a scoped context for testing
+  spec.summary = "🫥 Unobtrusively stub ENV keys and values during testing"
+  spec.description = %[🫥 Stub or hide environment variables in a scoped context for testing
 stub_env('REDIS_URL' => 'redis://localhost:6379/')
 hide_env('SESSION_SECRET')
 ]
