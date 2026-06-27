@@ -1,0 +1,8 @@
+module RSpec
+  module StubbedEnv
+    module Version
+      VERSION: String
+    end
+    VERSION: String
+  end
+end

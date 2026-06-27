@@ -1,0 +1,125 @@
+{
+  "- *does not* affect the real ENV at all.  It is a true stub.\n- has the same scope as a `before`, `subject`, or `let` at the same level.": [
+    {
+      "file": "README.md",
+      "lines": [
+        150,
+        233
+      ]
+    }
+  ],
+  "- 85.71% documented\n### Added": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        38,
+        49,
+        62
+      ]
+    }
+  ],
+  "- is opt-in, via a shared context, rather than global.\n- *does not* affect the real ENV at all.  It is a true stub.": [
+    {
+      "file": "README.md",
+      "lines": [
+        149,
+        232
+      ]
+    }
+  ],
+  "I do not recommend the _global_ approach, as it results in a loss of clarity\non which tests are testing ENV-based behaviors.  Here's a foot-gun if you want it.": [
+    {
+      "file": "README.md",
+      "lines": [
+        219,
+        278
+      ]
+    }
+  ],
+  "appraisal: \"current\"\nexec_cmd: \"rake test\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        41,
+        51,
+        59
+      ]
+    }
+  ],
+  "appraisal: \"head\"\nexec_cmd: \"rake test\"": [
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        42,
+        58
+      ]
+    }
+  ],
+  "exec_cmd: \"rake test\"\ngemfile: \"Appraisal.root\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        42,
+        52,
+        60
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        43,
+        59
+      ]
+    },
+    {
+      "file": ".github/workflows/jruby.yml",
+      "lines": [
+        42,
+        50,
+        58,
+        66
+      ]
+    },
+    {
+      "file": ".github/workflows/truffle.yml",
+      "lines": [
+        42,
+        50,
+        58
+      ]
+    }
+  ],
+  "gemfile: \"Appraisal.root\"\nrubygems: default": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        53,
+        61
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        44,
+        60
+      ]
+    },
+    {
+      "file": ".github/workflows/jruby.yml",
+      "lines": [
+        43,
+        51,
+        59,
+        67
+      ]
+    },
+    {
+      "file": ".github/workflows/truffle.yml",
+      "lines": [
+        43,
+        51,
+        59
+      ]
+    }
+  ]
+}

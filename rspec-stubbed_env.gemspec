@@ -1,15 +1,21 @@
 # frozen_string_literal: true
 
+# kettle-jem:freeze
+# To retain chunks of comments & code during kettle-jem templating:
+# Wrap custom sections with freeze markers (e.g., as above and below this comment chunk).
+# kettle-jem will then preserve content between those markers across template runs.
+# kettle-jem:unfreeze
+
 gem_version =
-  if RUBY_VERSION >= "3.1"
+  if Gem.ruby_version >= Gem::Version.new("3.1")
     # Loading Version into an anonymous module allows version.rb to get code coverage from SimpleCov!
     # See: https://github.com/simplecov-ruby/simplecov/issues/557#issuecomment-2630782358
-    Module.new.tap { |mod| Kernel.load("lib/rspec/stubbed_env/version.rb", mod) }::RSpec::StubbedEnv::Version::VERSION
+    # See: https://github.com/panorama-ed/memo_wise/pull/397
+    Module.new.tap { |mod| Kernel.load("#{__dir__}/lib/rspec/stubbed_env/version.rb", mod) }::RSpec::StubbedEnv::Version::VERSION
   else
-    # NOTE: Use __FILE__ until removal of Ruby 1.x support
+    # NOTE: Use __FILE__ or __dir__ until removal of Ruby 1.x support
     # __dir__ introduced in Ruby 1.9.1
-    # lib = File.expand_path("lib", __dir__)
-    lib = File.expand_path("../lib", __FILE__)
+    lib = File.expand_path("lib", File.dirname(__FILE__))
     $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
     require "rspec/stubbed_env/version"
     RSpec::StubbedEnv::Version::VERSION
@@ -21,9 +27,17 @@ Gem::Specification.new do |spec|
   spec.authors = ["Peter Boling", "Liam Bennett"]
   spec.email = ["floss@galtzo.com"]
 
+  spec.summary = "🫥 Unobtrusively stub ENV keys and values during testing"
+  spec.description = %[🫥 Stub or hide environment variables in a scoped context for testing
+stub_env('REDIS_URL' => 'redis://localhost:6379/')
+hide_env('SESSION_SECRET')
+]
+  spec.homepage = "https://github.com/pboling/rspec-stubbed_env"
+  spec.licenses = ["MIT"]
+  spec.required_ruby_version = ">= 1.8.7"
+
   # Linux distros often package gems and securely certify them independent
   #   of the official RubyGem certification process. Allowed via ENV["SKIP_GEM_SIGNING"]
-  # Ref: https://gitlab.com/oauth-xx/version_gem/-/issues/3
   # Hence, only enable signing if `SKIP_GEM_SIGNING` is not set in ENV.
   # See CONTRIBUTING.md
   unless ENV.include?("SKIP_GEM_SIGNING")
@@ -39,16 +53,7 @@ Gem::Specification.new do |spec|
     end
   end
 
-  spec.summary = "🫥 Unobtrusively stub ENV keys and values during testing"
-  spec.description = %[🫥 Stub or hide environment variables in a scoped context for testing
-stub_env('REDIS_URL' => 'redis://localhost:6379/')
-hide_env('SESSION_SECRET')
-]
-  spec.homepage = "https://github.com/galtzo-floss/#{spec.name}"
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 1.8.7"
-
-  spec.metadata["homepage_uri"] = "https://#{spec.name.tr("_", "-")}.galtzo.com/"
+  spec.metadata["homepage_uri"] = "https://structuredmerge.org"
   spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
@@ -59,62 +64,97 @@ hide_env('SESSION_SECRET')
   spec.metadata["discord_uri"] = "https://discord.gg/3qme4XHNKN"
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  # Specify which files are part of each release.
+  enumerate_package_files = lambda do |root|
+    Dir.glob(File.join(root, "**", "*"), File::FNM_DOTMATCH).select do |path|
+      File.file?(path) && ![".", ".."].include?(File.basename(path))
+    end
+  end
+
+  # Specify which files are part of the released package.
   spec.files = Dir[
     # Splats (alphabetical)
     "lib/**/*.rb",
-  ]
+] + [
+  # Code / tasks / data (NOTE: exe/ is specified via spec.bindir and spec.executables below)
+  *enumerate_package_files.call("lib"),
+  # Executables and executable support scripts
+  *enumerate_package_files.call("exe"),
+  # Public certs for gem signing
+  *enumerate_package_files.call("certs"),
+  # Signatures
+  *enumerate_package_files.call("sig"),
+]
+
   # Automatically included with gem package, no need to list again in files.
   spec.extra_rdoc_files = Dir[
     # Files (alphabetical)
     "CHANGELOG.md",
+    "CITATION.cff",
     "CODE_OF_CONDUCT.md",
     "CONTRIBUTING.md",
-    "LICENSE.txt",
+    "FUNDING.md",
+    "LICENSE.md",
     "README.md",
+    "RUBOCOP.md",
     "SECURITY.md",
   ]
   spec.rdoc_options += [
     "--title",
     "#{spec.name} - #{spec.summary}",
     "--main",
-    "CHANGELOG.md",
-    "CODE_OF_CONDUCT.md",
-    "CONTRIBUTING.md",
-    "LICENSE.txt",
     "README.md",
-    "SECURITY.md",
+    "--exclude",
+    "^sig/",
     "--line-numbers",
     "--inline-source",
     "--quiet",
   ]
-  spec.require_paths = ["lib"]
   spec.bindir = "exe"
+  # Listed files are the relative paths from bindir above.
   spec.executables = []
+  spec.require_paths = ["lib"]
+
+  # Utilities
 
   # NOTE: It is preferable to list development dependencies in the gemspec due to increased
-  #       visibility and discoverability on RubyGems.org.
+  #       visibility and discoverability.
   #       However, development dependencies in gemspec will install on
   #       all versions of Ruby that will run in CI.
-  #       This gem, and its runtime dependencies, will install on Ruby down to 1.8.7.
-  #       This gem, and its development dependencies, will install on Ruby down to 2.3.x.
-  #       This is because in CI easy installation of Ruby, via setup-ruby, is for >= 2.3.
+  #       This gem, and its gemspec runtime dependencies, will install on Ruby down to 1.8.7.
+  #       This gem, and its gemspec development dependencies, will install on Ruby down to 2.4.
   #       Thus, dev dependencies in gemspec must have
   #
-  #       required_ruby_version ">= 2.3" (or lower)
+  #       required_ruby_version ">= 2.4" (or lower)
   #
   #       Development dependencies that require strictly newer Ruby versions should be in a "gemfile",
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
-  # Release Tasks
-  spec.add_development_dependency("stone_checksums", "~> 1.0")          # Ruby >= 2.2.0
+  # Dev, Test, & Release Tasks
+  spec.add_development_dependency("kettle-dev", "~> 2.2", ">= 2.2.19")     # ruby >= 2.4
 
-  ### Testing
-  spec.add_development_dependency("appraisal2", "~> 3.0")               # ruby >= 1.8.7
+  # Security
+  spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
+
+  # Tasks
+  spec.add_development_dependency("rake", "~> 13.0")                                # ruby >= 2.2.0
+
+  # Debugging
+  spec.add_development_dependency("require_bench", "~> 1.0", ">= 1.0.4")            # ruby >= 2.2.0
+
+  # Testing
+  spec.add_development_dependency("appraisal2", "~> 3.1", ">= 3.1.3")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.7")             # ruby >= 2.4
+  spec.add_development_dependency("turbo_tests2", "~> 3.1", ">= 3.1.5")            # ruby >= 2.4.0, default kettle-test runner
+
+  # Releasing
+  spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
+  spec.add_development_dependency("stone_checksums", "~> 1.0", ">= 1.0.3")          # ruby >= 2.2.0
+
+  # spec.add_development_dependency("erb", ">= 2.2")                                  # ruby >= 2.3.0, not SemVer, old rubies get dropped in a patch.
+  spec.add_development_dependency("gitmoji-regex", "~> 2.0", ">= 2.0.3")            # ruby >= 2.4
+
+  # spec.add_development_dependency("webmock", ">= 3")                    # Last version to support ruby >= 2.3
   spec.add_development_dependency("rspec", "~> 3.13")                   # ruby >= 0
   spec.add_development_dependency("rspec-block_is_expected", "~> 1.0")  # ruby >= 1.8.7
   spec.add_development_dependency("rspec_junit_formatter", "~> 0.6")    # Ruby >= 2.3.0, for GitLab Test Result Parsing
-
-  # Development tasks
-  spec.add_development_dependency("rake", "~> 13.0")                    # ruby >= 2.2
 end

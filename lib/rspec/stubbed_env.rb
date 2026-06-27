@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 # This Gem
+require_relative "stubbed_env/version"
+
 require "rspec/stubbed_env/version"
 require "rspec/stubbed_env/hide_helpers"
 require "rspec/stubbed_env/stub_helpers"

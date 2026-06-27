@@ -5,8 +5,6 @@ module RSpec
     module Version
       VERSION = "1.0.5"
     end
-
-    # Backwards compatability shim.
-    VERSION = Version::VERSION
+    VERSION = Version::VERSION # Traditional Constant Location
   end
 end
