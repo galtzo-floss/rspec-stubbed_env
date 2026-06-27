@@ -12,12 +12,14 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 ### Fixed
 ### Security
 
-## [1.0.5] - 2025-08-07
+## [1.0.5] - 2026-06-27
 - TAG: [v1.0.5][1.0.5t]
-- COVERAGE: 100.00% -- 73/73 lines in 5 files
-- BRANCH COVERAGE: 100.00% -- 10/10 branches in 5 files
-- 85.71% documented
+- COVERAGE: 100.00% -- 94/94 lines in 5 files
+- BRANCH COVERAGE: 84.21% -- 16/19 branches in 5 files
+- 80.00% documented
 ### Added
+- `stub_env_hash_accessors` opt-in helper for stubbing `ENV.to_hash` and
+  `ENV.to_h` with a mixed real, stubbed, and hidden environment hash.
 - More documentation
 - Release notifications to Galtzo FLOSS Discord
   - Join: https://discord.gg/3qme4XHNKN
@@ -104,7 +106,7 @@ and this project adheres to [Semantic Versioning v2](https://semver.org/spec/v2.
 [@hosamaly]: https://github.com/hosamaly
 
 [Unreleased]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.5...main
-[1.0.5]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.5...v1.0.5
+[1.0.5]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.4...v1.0.5
 [1.0.5t]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/tags/v1.0.5
 [1.0.4]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.3...v1.0.4
 [1.0.4t]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/tags/v1.0.4

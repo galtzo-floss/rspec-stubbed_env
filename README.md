@@ -222,6 +222,31 @@ describe "my stubbed test" do
 end
 ```
 
+By default, hash accessors such as `ENV.to_hash` and `ENV.to_h` are not stubbed.
+This keeps partial ENV stubs narrow. When code under test needs a hash snapshot,
+opt in with `stub_env_hash_accessors`:
+
+```ruby
+describe "my stubbed hash snapshot" do
+  include_context "with stubbed env"
+  include_context "with hidden env"
+
+  before do
+    stub_env_hash_accessors
+    stub_env("FOO" => "is bar")
+    hide_env("SECRET")
+  end
+
+  it "has a mixed real and stubbed hash" do
+    expect(ENV.to_hash).to(include("FOO" => "is bar"))
+    expect(ENV.to_hash).not_to(have_key("SECRET"))
+  end
+end
+```
+
+The helper is separate from `stub_env` arguments so real environment keys such
+as `"to_hash"` remain ordinary stubbable keys.
+
 If you want to make `stub_env` method available globally (without the `include_context` call),
 you can add in the `spec_helper`.
 

@@ -98,8 +98,7 @@ rescue LoadError
   end
 end
 
-desc "run spec task with test task"
-task test: :spec
+Rake::Task[:test].enhance([:spec])
 
 # Setup RuboCop-LTS
 begin
@@ -186,4 +185,4 @@ rescue LoadError
   end
 end
 
-task default: defaults
+task :default => defaults

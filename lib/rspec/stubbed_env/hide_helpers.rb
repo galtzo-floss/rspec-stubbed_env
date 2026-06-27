@@ -47,6 +47,7 @@ module RSpec
 
       def add_hidden_key(key)
         key = key.to_s # Support symbols by forcing to string
+        remember_hidden_key(key)
         hide_brackets(key)
         hide_fetch(key)
         hide_values_at

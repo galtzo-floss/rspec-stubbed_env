@@ -46,12 +46,22 @@ module RSpec
         end
       end
 
+      # Opt in to stubbing ENV hash accessors. By default, stub_env only stubs
+      # ENV[], ENV.fetch, and ENV.values_at so partial ENV stubs stay narrowly
+      # scoped.
+      def stub_env_hash_accessors
+        init_stub unless env_stubbed?
+        allow(ENV).to(receive(:to_hash) { mixed_env_hash })
+        allow(ENV).to(receive(:to_h) { mixed_env_hash })
+      end
+
       private
 
       STUBBED_KEY = "__STUBBED__"
 
-      def add_stubbed_value(key, value)
+      def add_stubbed_value(key, value, track: true)
         key = key.to_s # Support symbols by forcing to string
+        remember_stubbed_value(key, value) if track
         allow_brackets(key, value)
         allow_fetch(key, value)
         allow_values_at
@@ -80,10 +90,33 @@ module RSpec
       end
 
       def init_stub
+        @__rspec_stubbed_env_mutations ||= []
         allow(ENV).to(receive(:[]).and_call_original)
         allow(ENV).to(receive(:fetch).and_call_original)
         allow(ENV).to(receive(:values_at).and_call_original)
-        add_stubbed_value(STUBBED_KEY, true)
+        add_stubbed_value(STUBBED_KEY, true, :track => false)
+      end
+
+      def remember_stubbed_value(key, value)
+        @__rspec_stubbed_env_mutations ||= []
+        @__rspec_stubbed_env_mutations << [:stub, key, value]
+      end
+
+      def remember_hidden_key(key)
+        @__rspec_stubbed_env_mutations ||= []
+        @__rspec_stubbed_env_mutations << [:hide, key]
+      end
+
+      def mixed_env_hash
+        @__rspec_stubbed_env_mutations.each_with_object(ENV.each_pair.to_h) do |mutation, hash|
+          operation, key, value = mutation
+          case operation
+          when :stub
+            value.nil? ? hash.delete(key) : hash[key] = value
+          when :hide
+            hash.delete(key)
+          end
+        end
       end
     end
   end

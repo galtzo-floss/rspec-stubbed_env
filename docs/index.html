@@ -6,13 +6,13 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "README";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -357,6 +359,30 @@ provided directly to the <code>include_context</code> call:</p>
 end
 </code></pre>
 
+<p>By default, hash accessors such as <code>ENV.to_hash</code> and <code>ENV.to_h</code> are not stubbed.<br>
+This keeps partial ENV stubs narrow. When code under test needs a hash snapshot,<br>
+opt in with <code>stub_env_hash_accessors</code>:</p>
+
+<pre class="code language-ruby"><code class="language-ruby">describe &quot;my stubbed hash snapshot&quot; do
+  include_context &quot;with stubbed env&quot;
+  include_context &quot;with hidden env&quot;
+
+  before do
+    stub_env_hash_accessors
+    stub_env(&quot;FOO&quot; =&gt; &quot;is bar&quot;)
+    hide_env(&quot;SECRET&quot;)
+  end
+
+  it &quot;has a mixed real and stubbed hash&quot; do
+    expect(ENV.to_hash).to(include(&quot;FOO&quot; =&gt; &quot;is bar&quot;))
+    expect(ENV.to_hash).not_to(have_key(&quot;SECRET&quot;))
+  end
+end
+</code></pre>
+
+<p>The helper is separate from <code>stub_env</code> arguments so real environment keys such<br>
+as <code>"to_hash"</code> remain ordinary stubbable keys.</p>
+
 <p>If you want to make <code>stub_env</code> method available globally (without the <code>include_context</code> call),<br>
 you can add in the <code>spec_helper</code>.</p>
 
@@ -570,9 +596,9 @@ or one of the smaller ones, depending on button size preference.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sun Aug 10 15:37:26 2025 by
+  Generated on Sat Jun 27 00:07:20 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.5).
+  0.9.44 (ruby-3.4.5).
 </div>
 
     </div>

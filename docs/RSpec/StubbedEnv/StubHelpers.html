@@ -6,13 +6,13 @@
 <title>
   Module: RSpec::StubbedEnv::StubHelpers
   
-    &mdash; Documentation by YARD 0.9.37
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "RSpec::StubbedEnv::StubHelpers";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -83,7 +85,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/rspec/stubbed_env/stub_helpers.rb</dd>
+    <dd>lib/rspec/stubbed_env/stub_helpers.rb
+</dd>
   </dl>
   
 </div>
@@ -136,7 +139,31 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stub_env_hash_accessors-instance_method" title="#stub_env_hash_accessors (instance method)">#<strong>stub_env_hash_accessors</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Opt in to stubbing ENV hash accessors.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
+    
   
 
 
@@ -205,14 +232,60 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="stub_env_hash_accessors-instance_method">
+  
+    #<strong>stub_env_hash_accessors</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Opt in to stubbing ENV hash accessors. By default, stub_env only stubs<br />
+ENV[], ENV.fetch, and ENV.values_at so partial ENV stubs stay narrowly<br />
+scoped.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rspec/stubbed_env/stub_helpers.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stub_env_hash_accessors'>stub_env_hash_accessors</span>
+  <span class='id identifier rubyid_init_stub'>init_stub</span> <span class='kw'>unless</span> <span class='id identifier rubyid_env_stubbed?'>env_stubbed?</span>
+  <span class='id identifier rubyid_allow'>allow</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to'>to</span><span class='lparen'>(</span><span class='id identifier rubyid_receive'>receive</span><span class='lparen'>(</span><span class='symbol'>:to_hash</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_mixed_env_hash'>mixed_env_hash</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_allow'>allow</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to'>to</span><span class='lparen'>(</span><span class='id identifier rubyid_receive'>receive</span><span class='lparen'>(</span><span class='symbol'>:to_h</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_mixed_env_hash'>mixed_env_hash</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Sun Aug 10 15:37:26 2025 by
+  Generated on Sat Jun 27 00:07:20 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.37 (ruby-3.4.5).
+  0.9.44 (ruby-3.4.5).
 </div>
 
     </div>
