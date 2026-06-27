@@ -9,4 +9,3 @@ Choose the option that best fits your use case:
 
 - Copyright (c) 2018-2019, 2023, 2025-2026 Peter H. Boling
 - Copyright (c) 2024 Maxim Krizhanovski
-- Copyright (c) 2025 Aboling0

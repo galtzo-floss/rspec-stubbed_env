@@ -13,7 +13,7 @@ class FooByEnv
       ENV.fetch("BIG_1", nil),
       ENV.fetch("BIG_2", nil),
       ENV.fetch("BIG_3", nil),
-      ENV.fetch("BIG_4", nil),
+      ENV.fetch("BIG_4", nil)
     ]
     end.compact
     @size = @array.length

@@ -116,7 +116,7 @@ rubygems:
 #
 # ENV override: KJ_REPOSITORY_TOPOLOGY
 repository:
-  topology: "monorepo-subproject"
+  topology: standalone
 
 # Framework matrix workflows.
 # When your gem tests against multiple versions of a framework (Rails,
@@ -304,7 +304,7 @@ machine_users:
 # Divergence is currently measured as the percent of produced files that would
 # change or be added during templating (100 - unchanged-file score).
 # ENV override: KJ_MIN_DIVERGENCE_THRESHOLD
-min_divergence_threshold: 
+min_divergence_threshold:
 
 # Hostname used for generated YARD documentation links.
 # Defaults to <gem-name>.<author-email-domain>.
@@ -314,7 +314,7 @@ yard_host: "rspec-stubbed-env.galtzo.com"
 # Full URL used for gemspec metadata["homepage_uri"].
 # Defaults to https://rspec-stubbed-env.galtzo.com.
 # ENV override: KJ_HOMEPAGE_URI
-homepage_uri: "https://structuredmerge.org"
+homepage_uri: "https://rspec-stubbed-env.galtzo.com/"
 
 # Template source inventory.
 # The packaged inventory is the canonical kettle-jem project template. It
@@ -330,23 +330,7 @@ templates:
   #   monorepo-root   - repository-root support template
   #
   # ENV override: KETTLE_JEM_TEMPLATE_PROFILE
-  profile: monorepo-subgem-package
-  entries:
-    - README.md
-    - source: gem.gemspec
-      target: rspec-stubbed_env.gemspec
-    - LICENSE.md
-    - MIT.md
-    - AGPL-3.0-only.md
-    - PolyForm-Noncommercial-1.0.0.md
-    - PolyForm-Small-Business-1.0.0.md
-    - Big-Time-Public-License.md
-    - certs/pboling.pem
-    - tmp/.gitignore
-    - source: lib/gem/version.rb
-      target: lib/rspec/stubbed_env/version.rb
-    - source: sig/gem/version.rbs
-      target: sig/rspec/stubbed_env/version.rbs
+  profile: full
 
 # StructuredMerge Git diff driver setup.
 # Default: semantic-diff installs local .gitattributes entries for semantic

@@ -1,0 +1,28 @@
+{
+  "rspec-stubbed_env.gemspec:3040295449": [
+    [37, 32, 10, "Gemspec/RequiredRubyVersion: `required_ruby_version` and `TargetRubyVersion` (2.0, which may be specified in .rubocop.yml) should be equal.", 3998630200]
+  ],
+  "spec/rspec/stubbed_env/hide_helpers_spec.rb:755880616": [
+    [31, 9, 44, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 423251009],
+    [32, 9, 44, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 3891040897],
+    [33, 9, 48, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 2419104020],
+    [78, 9, 41, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 3728894832],
+    [79, 9, 41, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 2522134064],
+    [80, 9, 41, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 4201117168],
+    [81, 9, 41, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 1008516784],
+    [82, 9, 48, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 199108690],
+    [141, 7, 36, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 1658523203],
+    [142, 7, 32, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 4090775459],
+    [170, 7, 20, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 1685646716],
+    [171, 7, 18, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 251829431],
+    [196, 7, 20, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 2660657743],
+    [197, 7, 19, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 3109749308]
+  ],
+  "spec/rspec/stubbed_env/stub_helpers_spec.rb:2597448221": [
+    [144, 7, 38, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 753785283],
+    [145, 7, 34, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 4226930083],
+    [172, 7, 37, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 1245370746],
+    [173, 7, 35, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 1196075514],
+    [174, 7, 34, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 4226930083]
+  ]
+}

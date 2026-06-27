@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 stub_env('REDIS_URL' => 'redis://localhost:6379/')
 hide_env('SESSION_SECRET')
 ]
-  spec.homepage = "https://github.com/pboling/rspec-stubbed_env"
+  spec.homepage = "https://github.com/galtzo-floss/rspec-stubbed_env"
   spec.licenses = ["MIT"]
   spec.required_ruby_version = ">= 1.8.7"
 
@@ -53,7 +53,7 @@ hide_env('SESSION_SECRET')
     end
   end
 
-  spec.metadata["homepage_uri"] = "https://structuredmerge.org"
+  spec.metadata["homepage_uri"] = "https://rspec-stubbed-env.galtzo.com/"
   spec.metadata["source_code_uri"] = "#{spec.homepage}/tree/v#{spec.version}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/v#{spec.version}/CHANGELOG.md"
   spec.metadata["bug_tracker_uri"] = "#{spec.homepage}/issues"
@@ -73,7 +73,7 @@ hide_env('SESSION_SECRET')
   # Specify which files are part of the released package.
   spec.files = Dir[
     # Splats (alphabetical)
-    "lib/**/*.rb",
+    "lib/**/*.rb"
 ] + [
   # Code / tasks / data (NOTE: exe/ is specified via spec.bindir and spec.executables below)
   *enumerate_package_files.call("lib"),
@@ -82,7 +82,7 @@ hide_env('SESSION_SECRET')
   # Public certs for gem signing
   *enumerate_package_files.call("certs"),
   # Signatures
-  *enumerate_package_files.call("sig"),
+  *enumerate_package_files.call("sig")
 ]
 
   # Automatically included with gem package, no need to list again in files.
@@ -96,7 +96,7 @@ hide_env('SESSION_SECRET')
     "LICENSE.md",
     "README.md",
     "RUBOCOP.md",
-    "SECURITY.md",
+    "SECURITY.md"
   ]
   spec.rdoc_options += [
     "--title",
@@ -107,7 +107,7 @@ hide_env('SESSION_SECRET')
     "^sig/",
     "--line-numbers",
     "--inline-source",
-    "--quiet",
+    "--quiet"
   ]
   spec.bindir = "exe"
   # Listed files are the relative paths from bindir above.

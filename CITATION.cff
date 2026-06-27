@@ -1,20 +1,20 @@
 cff-version: 1.2.0
-title: RSpec::StubbedEnv
+title: "rspec-stubbed_env"
 message: >-
   If you use this work and you want to cite it,
   then you can use the metadata from this file.
 type: software
 authors:
-  - given-names: Peter Hurn
-    family-names: Boling
-    email: peter@railsbling.com
-    affiliation: railsbling.com
+  - given-names: "Peter H."
+    family-names: "Boling"
+    email: "floss@galtzo.com"
+    affiliation: "galtzo.com"
     orcid: 'https://orcid.org/0009-0008-8519-441X'
 identifiers:
   - type: url
-    value: 'https://github.com/galtzo-floss/rspec-stubbed_env/'
-    description: RSpec::StubbedEnv
-repository-code: 'https://github.com/galtzo-floss/rspec-stubbed_env/'
+    value: 'https://github.com/galtzo-floss/rspec-stubbed_env'
+    description: "rspec-stubbed_env"
+repository-code: 'https://github.com/galtzo-floss/rspec-stubbed_env'
 abstract: >-
-  RSpec::StubbedEnv
+  rspec-stubbed_env
 license: See license file

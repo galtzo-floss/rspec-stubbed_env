@@ -31,7 +31,7 @@ RSpec.describe(RSpec::StubbedEnv::StubHelpers) do
         stub_env(
           "MEDIUM_1" => "datastore-01.example.org",
           "MEDIUM_2" => "datastore-02.example.org",
-          "IRRELEVANT_3" => "datastore-03.example.org",
+          "IRRELEVANT_3" => "datastore-03.example.org"
         )
         allow(Rails).to(receive(:env).and_return(environment))
       end
@@ -62,7 +62,7 @@ RSpec.describe(RSpec::StubbedEnv::StubHelpers) do
           "BIG_2" => "datastore-02.example.org",
           "BIG_3" => "datastore-03.example.org",
           "BIG_4" => "datastore-04.example.org",
-          "IRRELEVANT_5" => "datastore-03.example.org",
+          "IRRELEVANT_5" => "datastore-03.example.org"
         )
         allow(Rails).to(receive(:env).and_return(environment))
       end

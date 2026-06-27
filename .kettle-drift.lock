@@ -3,8 +3,8 @@
     {
       "file": "README.md",
       "lines": [
-        150,
-        233
+        190,
+        273
       ]
     }
   ],
@@ -12,9 +12,9 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        38,
-        49,
-        62
+        56,
+        67,
+        80
       ]
     }
   ],
@@ -22,8 +22,17 @@
     {
       "file": "README.md",
       "lines": [
-        149,
-        232
+        189,
+        272
+      ]
+    }
+  ],
+  "// Use 'forwardPorts' to make a list of ports inside the container available locally.\n// \"forwardPorts\": [],": [
+    {
+      "file": ".devcontainer/devcontainer.json",
+      "lines": [
+        11,
+        22
       ]
     }
   ],
@@ -31,94 +40,45 @@
     {
       "file": "README.md",
       "lines": [
-        219,
-        278
+        259,
+        318
       ]
     }
   ],
-  "appraisal: \"current\"\nexec_cmd: \"rake test\"": [
+  "appraisal: \"dep-heads\"\nexec_cmd: \"kettle-test\"": [
     {
-      "file": ".github/workflows/current.yml",
+      "file": ".github/workflows/dep-heads.yml",
       "lines": [
-        41,
+        44,
         51,
-        59
-      ]
-    }
-  ],
-  "appraisal: \"head\"\nexec_cmd: \"rake test\"": [
-    {
-      "file": ".github/workflows/heads.yml",
-      "lines": [
-        42,
         58
       ]
     }
   ],
-  "exec_cmd: \"rake test\"\ngemfile: \"Appraisal.root\"": [
-    {
-      "file": ".github/workflows/current.yml",
-      "lines": [
-        42,
-        52,
-        60
-      ]
-    },
+  "appraisal: \"head\"\nexec_cmd: \"kettle-test\"": [
     {
       "file": ".github/workflows/heads.yml",
       "lines": [
         43,
-        59
-      ]
-    },
-    {
-      "file": ".github/workflows/jruby.yml",
-      "lines": [
-        42,
         50,
-        58,
-        66
-      ]
-    },
-    {
-      "file": ".github/workflows/truffle.yml",
-      "lines": [
-        42,
-        50,
-        58
+        57
       ]
     }
   ],
-  "gemfile: \"Appraisal.root\"\nrubygems: default": [
+  "exec_cmd: \"kettle-test\"\nrubygems: default": [
     {
-      "file": ".github/workflows/current.yml",
+      "file": ".github/workflows/dep-heads.yml",
       "lines": [
-        53,
-        61
+        52,
+        59
       ]
     },
     {
       "file": ".github/workflows/heads.yml",
       "lines": [
         44,
-        60
-      ]
-    },
-    {
-      "file": ".github/workflows/jruby.yml",
-      "lines": [
-        43,
         51,
-        59,
-        67
-      ]
-    },
-    {
-      "file": ".github/workflows/truffle.yml",
-      "lines": [
-        43,
-        51,
-        59
+        58
       ]
     }
   ]
