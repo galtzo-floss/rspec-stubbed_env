@@ -8,16 +8,6 @@
       ]
     }
   ],
-  "- 85.71% documented\n### Added": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        56,
-        67,
-        80
-      ]
-    }
-  ],
   "- is opt-in, via a shared context, rather than global.\n- *does not* affect the real ENV at all.  It is a true stub.": [
     {
       "file": "README.md",

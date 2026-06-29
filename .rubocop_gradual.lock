@@ -1,7 +1,4 @@
 {
-  "rspec-stubbed_env.gemspec:3040295449": [
-    [37, 32, 10, "Gemspec/RequiredRubyVersion: `required_ruby_version` and `TargetRubyVersion` (2.0, which may be specified in .rubocop.yml) should be equal.", 3998630200]
-  ],
   "spec/rspec/stubbed_env/hide_helpers_spec.rb:755880616": [
     [31, 9, 44, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 423251009],
     [32, 9, 44, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 3891040897],
