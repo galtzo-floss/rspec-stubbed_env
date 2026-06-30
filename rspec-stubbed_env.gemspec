@@ -71,10 +71,7 @@ hide_env('SESSION_SECRET')
   end
 
   # Specify which files are part of the released package.
-  spec.files = Dir[
-    # Splats (alphabetical)
-    "lib/**/*.rb"
-] + [
+  spec.files = [
   # Root license files
   "LICENSE.md",
   "MIT.md",
