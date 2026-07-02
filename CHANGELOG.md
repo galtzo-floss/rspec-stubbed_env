@@ -28,9 +28,18 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Package configured license files in gem release file lists.
-
 ### Security
+
+## [1.0.6] - 2026-07-02
+
+- TAG: [v1.0.6][1.0.6t]
+- COVERAGE: 100.00% -- 95/95 lines in 5 files
+- BRANCH COVERAGE: 84.21% -- 16/19 branches in 5 files
+- 80.00% documented
+
+### Fixed
+
+- Package configured license files in gem release file lists.
 
 ## [1.0.5] - 2026-06-27
 
@@ -153,7 +162,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.6...HEAD
+[1.0.6]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.5...v1.0.6
+[1.0.6t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.6
 [1.0.5]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.4...v1.0.5
 [1.0.5t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.5
 [1.0.4]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.3...v1.0.4

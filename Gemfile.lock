@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    rspec-stubbed_env (1.0.5)
+    rspec-stubbed_env (1.0.6)
 
 GEM
   remote: https://gem.coop/
