@@ -28,6 +28,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Avoid duplicate generated appraisal declarations for stdlib gems already
+  supplied by the modular `x_std_libs` gemfiles.
+
 ### Security
 
 ## [1.0.6] - 2026-07-02
