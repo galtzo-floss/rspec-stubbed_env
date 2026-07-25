@@ -70,7 +70,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.6...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.7...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
@@ -84,6 +84,47 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
+<h2 id="107---2026-07-25">
+<a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.6...v1.0.7">1.0.7</a> - 2026-07-25</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.7">v1.0.7</a>
+</li>
+  <li>COVERAGE: 100.00% – 95/95 lines in 5 files</li>
+  <li>BRANCH COVERAGE: 100.00% – 19/19 branches in 5 files</li>
+  <li>80.00% documented</li>
+</ul>
+
+<h3 id="changed-1">Changed</h3>
+
+<ul>
+  <li>kettle-jem-template-20260716-001 - Shim gemspec manifests now include<br>
+<code>LICENSE.md</code> instead of nonexistent <code>LICENSE.txt</code>.</li>
+  <li>kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer<br>
+repository-only files by default to reduce downstream distro packaging churn.</li>
+  <li>kettle-jem-template-20260720-001 - Generated READMEs can now render<br>
+template-managed corporate sponsor logos from project or family config.</li>
+  <li>kettle-jem-template-20260720-002 - Generated development Gemfiles now use the<br>
+released <code>tree_sitter_language_pack</code> gem 1.13.3 or newer by default.</li>
+  <li>kettle-jem-template-20260720-003 - Generated StructuredMerge Git diff driver<br>
+config now uses the installed <code>smorg-rb</code> Ruby driver name.</li>
+  <li>kettle-jem-template-20260720-004 - Generated multi-engine workflow files now<br>
+omit JRuby and TruffleRuby jobs when project config declares MRI-only engines.</li>
+  <li>kettle-jem-template-20260720-005 - Generated README Support &amp; Community rows<br>
+now include a RubyForum help badge.</li>
+  <li>kettle-jem-template-20260725-001 - Generated JRuby and TruffleRuby workflow<br>
+files now run when pull request head branches start with <code>feature/release</code>,<br>
+so release CI monitoring does not report intentionally skipped engine<br>
+workflows as failures.</li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>Added branch coverage for hash accessor stubbing edge cases so the suite meets<br>
+its 100% branch coverage release threshold.</li>
+</ul>
+
 <h2 id="106---2026-07-02">
 <a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.5...v1.0.6">1.0.6</a> - 2026-07-02</h2>
 
@@ -95,7 +136,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>80.00% documented</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
   <li>
@@ -136,7 +177,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
 <code>Version</code> module, with backwards compatibility for deprecated <code>VERSION</code> constant</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
   <li>Bad links in documentation</li>
@@ -161,7 +202,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>Discord notifications for CI, issues, pulls, etc</li>
 </ul>
 
-<h3 id="changed-1">Changed</h3>
+<h3 id="changed-2">Changed</h3>
 
 <ul>
   <li>Ownership transfer from pboling to galtzo-floss</li>
@@ -191,7 +232,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   </li>
 </ul>
 
-<h3 id="changed-2">Changed</h3>
+<h3 id="changed-3">Changed</h3>
 
 <ul>
   <li>gemspec metadata</li>
@@ -257,7 +298,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>Releases now have checksums</li>
 </ul>
 
-<h3 id="changed-3">Changed</h3>
+<h3 id="changed-4">Changed</h3>
 
 <ul>
   <li>Required ruby version in gemspec &gt;= 1.8.7
@@ -270,7 +311,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>Moved from master to main default branch</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
   <li>README Badges (CI status)</li>

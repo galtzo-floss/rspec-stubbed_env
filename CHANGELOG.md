@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.0.7] - 2026-07-25
+
+- TAG: [v1.0.7][1.0.7t]
+- COVERAGE: 100.00% -- 95/95 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 19/19 branches in 5 files
+- 80.00% documented
+
+### Changed
+
 - kettle-jem-template-20260716-001 - Shim gemspec manifests now include
   `LICENSE.md` instead of nonexistent `LICENSE.txt`.
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
@@ -41,16 +58,10 @@ Please file a bug if you notice a violation of semantic versioning.
   so release CI monitoring does not report intentionally skipped engine
   workflows as failures.
 
-### Deprecated
-
-### Removed
-
 ### Fixed
 
 - Added branch coverage for hash accessor stubbing edge cases so the suite meets
   its 100% branch coverage release threshold.
-
-### Security
 
 ## [1.0.6] - 2026-07-02
 
@@ -187,7 +198,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.6...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.7...HEAD
+[1.0.7]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.6...v1.0.7
+[1.0.7t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.7
 [1.0.6]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.5...v1.0.6
 [1.0.6t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.6
 [1.0.5]: https://gitlab.com/galtzo-floss/rspec-stubbed_env/-/compare/v1.0.4...v1.0.5
