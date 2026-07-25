@@ -3,7 +3,7 @@
 module RSpec
   module StubbedEnv
     module Version
-      VERSION = "1.0.7"
+      VERSION = "1.0.8"
     end
     VERSION = Version::VERSION # Traditional Constant Location
   end
