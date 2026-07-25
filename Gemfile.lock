@@ -8,6 +8,8 @@ GEM
   specs:
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
+    anonymous_loader (0.1.3)
+      version_gem (~> 1.1, >= 1.1.14)
     ansi (1.6.0)
     appraisal2 (3.2.0)
       bundler (>= 1.17.3)
@@ -83,7 +85,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.21.1)
-    kettle-dev (2.4.3)
+    kettle-dev (2.4.5)
       emoji_regex (>= 15.0)
       kettle-gha-pins (~> 0.3, >= 0.3.1)
       kettle-ndjson (~> 0.1, >= 0.1.1)
@@ -376,6 +378,7 @@ PLATFORMS
 
 DEPENDENCIES
   addressable (>= 2.8, < 3)
+  anonymous_loader (~> 0.1, >= 0.1.3)
   appraisal2 (~> 3.2, >= 3.2.0)
   appraisal2-rubocop (~> 1.0, >= 1.0.0)
   benchmark (~> 0.5, >= 0.5.0)
@@ -425,6 +428,7 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
+  anonymous_loader (0.1.3) sha256=084a18e2439144d955447dc11dfc982f41fcd1583ad32d4d55151325dc44cb55
   ansi (1.6.0) sha256=ac9ea0c0ea8d32fb4e271348e609963ac78882f34b73836c2a02b3622e666658
   appraisal2 (3.2.0) sha256=ccd0b767ac4060cd7af6d16747459b6990f49c39c7b4fb1f7d1146b1e97c492f
   appraisal2-rubocop (1.0.0) sha256=b71410fbb014befda5340605a605b7f6f3f012739baf0acc5b4351b592c3258d
@@ -458,7 +462,7 @@ CHECKSUMS
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
   json (2.21.1) sha256=13a43df75d95641443f5702dff350f237164a9d811ff0f2c2800d4d980220583
-  kettle-dev (2.4.3) sha256=b7252bd059122ff6e24dc5fe53a89fce5db71227c1cfa962630c0d96aadf344b
+  kettle-dev (2.4.5) sha256=3a451940796a671b7adc910db7c3da87899ebec7c5274921ca598345549ae7eb
   kettle-gha-pins (0.3.1) sha256=b13a82a403af31880288fe65f85f2a24a93ae4740c0c7cbc15a35044d27aaa51
   kettle-ndjson (0.1.1) sha256=2d84314e8c911d6f560f2736e8f72019df6d811829674788ff33b3bbf518ed66
   kettle-rb (0.1.5) sha256=0322a569860c86e70f90d5ebe72353b8720b7054c7efa9f9044857f5c972d29f
