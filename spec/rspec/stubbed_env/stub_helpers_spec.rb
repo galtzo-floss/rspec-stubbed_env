@@ -217,6 +217,29 @@ RSpec.describe(RSpec::StubbedEnv::StubHelpers) do
       expect(ENV.to_h).to(eq(ENV.to_hash))
     end
 
+    it "can be opted in after ENV has already been stubbed" do
+      stub_env("TO_BE_STUBBED", "stubbed")
+      stub_env_hash_accessors
+
+      expect(ENV.to_hash).to(include("TO_BE_STUBBED" => "stubbed"))
+    end
+
+    it "removes nil stub values from opted-in hash accessors" do
+      stub_env_hash_accessors
+      stub_env("TO_BE_STUBBED", nil)
+
+      expect(ENV.to_hash).not_to(have_key("TO_BE_STUBBED"))
+    end
+
+    it "ignores unknown tracked mutation operations" do
+      stub_env_hash_accessors
+      stub_env("TO_BE_STUBBED", "stubbed")
+      mutations = instance_variable_get(:@__rspec_stubbed_env_mutations)
+      mutations << [:unknown, "TO_BE_STUBBED", "ignored"]
+
+      expect(ENV.to_hash).to(include("TO_BE_STUBBED" => "stubbed"))
+    end
+
     it "reflects a stub after a hide in hash accessors" do
       stub_env_hash_accessors
       hide_env("TO_BE_STUBBED")

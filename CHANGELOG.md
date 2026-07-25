@@ -47,6 +47,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Added branch coverage for hash accessor stubbing edge cases so the suite meets
+  its 100% branch coverage release threshold.
+
 ### Security
 
 ## [1.0.6] - 2026-07-02
