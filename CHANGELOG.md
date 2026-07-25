@@ -22,12 +22,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- kettle-jem-template-20260725-002 - Generated gemspec templates now include
-  `anonymous_loader` as a development dependency, and version specs use it to
-  execute generated `version.rb` files for coverage without redefining package
-  constants. Managed version specs are removed when `version_gem` is disabled
-  or incompatible with the project's runtime Ruby floor.
-
 ### Deprecated
 
 ### Removed
@@ -35,6 +29,21 @@ Please file a bug if you notice a violation of semantic versioning.
 ### Fixed
 
 ### Security
+
+## [1.0.8] - 2026-07-25
+
+- TAG: [v1.0.8][1.0.8t]
+- COVERAGE: 100.00% -- 95/95 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 19/19 branches in 5 files
+- 80.00% documented
+
+### Changed
+
+- kettle-jem-template-20260725-002 - Generated gemspec templates now include
+  `anonymous_loader` as a development dependency, and version specs use it to
+  execute generated `version.rb` files for coverage without redefining package
+  constants. Managed version specs are removed when `version_gem` is disabled
+  or incompatible with the project's runtime Ruby floor.
 
 ## [1.0.7] - 2026-07-25
 
@@ -204,7 +213,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.7...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.8...HEAD
+[1.0.8]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.7...v1.0.8
+[1.0.8t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.8
 [1.0.7]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.6...v1.0.7
 [1.0.7t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.7
 [1.0.6]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.5...v1.0.6
