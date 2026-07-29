@@ -2,7 +2,7 @@
 version: 1
 template_state:
   version: 7.1.0
-  applied_at: '2026-07-28'
+  applied_at: '2026-07-29'
   changelog_replay:
     last_entry_key: kettle-jem-template-20260728-004
     last_entry_date: '2026-07-28'
@@ -669,7 +669,7 @@ files:
   CHANGELOG.md:
     recipe: template_source_application_CHANGELOG_md
     action: write
-    dest_sha256: 437b57c51090d373b32b4a4a677d72eef0fc02232146f75f0cdb568445fde645
+    dest_sha256: b0467d3f837e09f2ff78739ff437e2451ce5db54bac6d98c8cc1d6f0a4e1ce2a
     input_fingerprint: 6f527b179a59548f5cc770353244164de830dfb875bc63aebcbc41c76343450c
     template_sources:
     - CHANGELOG.md.example
