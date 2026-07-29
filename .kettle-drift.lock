@@ -26,6 +26,15 @@
       ]
     }
   ],
+  ":vendored_gems_env => \"VENDORED_GEMS\",\n:vendor_gem_dir_env => \"VENDOR_GEM_DIR\",": [
+    {
+      "file": "gemfiles/modular/templating_local.gemfile",
+      "lines": [
+        71,
+        82
+      ]
+    }
+  ],
   "I do not recommend the _global_ approach, as it results in a loss of clarity\non which tests are testing ENV-based behaviors.  Here's a foot-gun if you want it.": [
     {
       "file": "README.md",
