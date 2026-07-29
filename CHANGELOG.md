@@ -28,11 +28,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [1.0.10] - 2026-07-28
+
+- TAG: [v1.0.10][1.0.10t]
+- COVERAGE: 100.00% -- 95/95 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 19/19 branches in 5 files
+- 100.00% documented
+
+### Fixed
+
 - kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the
   setup-ruby Bundler install path for direct appraisal Gemfiles, avoiding rv
   lockfile parser failures on Git and path dependencies.
-
-### Security
 
 ## [1.0.9] - 2026-07-28
 
@@ -256,7 +265,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.9...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.10...HEAD
+[1.0.10]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.9...v1.0.10
+[1.0.10t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.10
 [1.0.9]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.8...v1.0.9
 [1.0.9t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.9
 [1.0.8]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.7...v1.0.8
