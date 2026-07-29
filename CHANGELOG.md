@@ -28,11 +28,20 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+### Security
+
+## [1.0.11] - 2026-07-28
+
+- TAG: [v1.0.11][1.0.11t]
+- COVERAGE: 100.00% -- 95/95 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 19/19 branches in 5 files
+- 100.00% documented
+
+### Fixed
+
 - kettle-jem-template-20260728-005 - VersionGem bootstrap now creates the
   missing canonical version spec when a project only has shim namespace version
   specs.
-
-### Security
 
 ## [1.0.10] - 2026-07-28
 
@@ -269,7 +278,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.10...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.11...HEAD
+[1.0.11]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.10...v1.0.11
+[1.0.11t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.11
 [1.0.10]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.9...v1.0.10
 [1.0.10t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.10
 [1.0.9]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.8...v1.0.9
