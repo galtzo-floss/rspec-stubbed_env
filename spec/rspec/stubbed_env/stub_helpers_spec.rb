@@ -269,6 +269,34 @@ RSpec.describe(RSpec::StubbedEnv::StubHelpers) do
 
       expect(ENV.to_hash).to(include("to_hash" => "env value"))
     end
+
+    it "exports opted-in stubs through subprocess env hashes" do
+      stub_env_hash_accessors
+      stub_env("TO_BE_STUBBED", "stubbed")
+
+      output = IO.popen(ENV.to_hash, [RbConfig.ruby, "-e", "puts ENV.fetch('TO_BE_STUBBED')"], &:read)
+
+      expect(output).to(eq("stubbed\n"))
+    end
+
+    it "documents that nil env overlays are a Ruby engine boundary, not a stub_env feature" do
+      pending_for(
+        :engine => "jruby",
+        :versions => "2.5",
+        :reason => "JRuby 9.2 exposes nil subprocess env overlays as empty strings instead of deleting the variable"
+      )
+      script = <<-RUBY
+        require "rbconfig"
+
+        key = "RSPEC_STUBBED_ENV_NIL_OVERLAY"
+        ENV[key] = "parent"
+        print IO.popen({key => nil}, [RbConfig.ruby, "-e", "puts ENV['RSPEC_STUBBED_ENV_NIL_OVERLAY'].inspect"], &:read)
+      RUBY
+
+      output = IO.popen([RbConfig.ruby, "-e", script], &:read)
+
+      expect(output).to(eq("nil\n"))
+    end
   end
 
   describe "stubbing" do
