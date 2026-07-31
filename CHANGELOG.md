@@ -20,15 +20,28 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- kettle-jem-template-20260729-005 - Gemspec metadata now publishes this
-  project's RubyForum tag as `mailing_list_uri`, and support docs link to the
-  tagged RubyForum community alongside Discord.
-
 ### Changed
 
 ### Deprecated
 
 ### Removed
+
+### Fixed
+
+### Security
+
+## [1.0.12] - 2026-07-31
+
+- TAG: [v1.0.12][1.0.12t]
+- COVERAGE: 100.00% -- 95/95 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 19/19 branches in 5 files
+- 100.00% documented
+
+### Added
+
+- kettle-jem-template-20260729-005 - Gemspec metadata now publishes this
+  project's RubyForum tag as `mailing_list_uri`, and support docs link to the
+  tagged RubyForum community alongside Discord.
 
 ### Fixed
 
@@ -43,8 +56,6 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs
   relative to the gemspec directory, so packaged template assets are included
   even when the gemspec is loaded from another working directory.
-
-### Security
 
 ## [1.0.11] - 2026-07-28
 
@@ -298,7 +309,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.11...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.12...HEAD
+[1.0.12]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.11...v1.0.12
+[1.0.12t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.12
 [1.0.11]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.10...v1.0.11
 [1.0.11t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.11
 [1.0.10]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.9...v1.0.10

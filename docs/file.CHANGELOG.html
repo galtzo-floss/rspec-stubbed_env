@@ -70,7 +70,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 and <a href="https://tom.preston-werner.com/2022/05/23/major-version-numbers-are-not-sacred.html">yes</a>, platform and engine support are part of the <a href="https://github.com/semver/semver/issues/716#issuecomment-869336139">public API</a>.<br>
 Please file a bug if you notice a violation of semantic versioning.</p>
 
-<h2 id="unreleased"><a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.11...HEAD">Unreleased</a></h2>
+<h2 id="unreleased"><a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.12...HEAD">Unreleased</a></h2>
 
 <h3 id="added">Added</h3>
 
@@ -84,6 +84,42 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
+<h2 id="1012---2026-07-31">
+<a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.11...v1.0.12">1.0.12</a> - 2026-07-31</h2>
+
+<ul>
+  <li>TAG: <a href="https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.12">v1.0.12</a>
+</li>
+  <li>COVERAGE: 100.00% – 95/95 lines in 5 files</li>
+  <li>BRANCH COVERAGE: 100.00% – 19/19 branches in 5 files</li>
+  <li>100.00% documented</li>
+</ul>
+
+<h3 id="added-1">Added</h3>
+
+<ul>
+  <li>kettle-jem-template-20260729-005 - Gemspec metadata now publishes this<br>
+project’s RubyForum tag as <code>mailing_list_uri</code>, and support docs link to the<br>
+tagged RubyForum community alongside Discord.</li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>
+    <p>kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves<br>
+and templates dedicated <code>version_gem.rb</code> entrypoints even when the gemspec<br>
+dependency is intentionally omitted, and generated anonymous-loader specs<br>
+cover both <code>version.rb</code> and <code>version_gem.rb</code>.</p>
+  </li>
+  <li>kettle-jem-template-20260729-003 - Old-Ruby gems below the VersionGem runtime<br>
+floor now get managed minimal <code>version.rb</code> files and anonymous-loader version<br>
+specs without adding <code>version_gem</code>.</li>
+  <li>kettle-jem-template-20260730-001 - Gemspec package file enumeration now runs<br>
+relative to the gemspec directory, so packaged template assets are included<br>
+even when the gemspec is loaded from another working directory.</li>
+</ul>
+
 <h2 id="1011---2026-07-28">
 <a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.10...v1.0.11">1.0.11</a> - 2026-07-28</h2>
 
@@ -95,7 +131,7 @@ Please file a bug if you notice a violation of semantic versioning.</p>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
   <li>
@@ -121,7 +157,7 @@ failures against <code>gem.coop</code>.</p>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the<br>
@@ -140,7 +176,7 @@ lockfile parser failures on Git and path dependencies.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="added-1">Added</h3>
+<h3 id="added-2">Added</h3>
 
 <ul>
   <li>
@@ -165,7 +201,7 @@ setup-ruby-flash planning and can prepare appraisal-only jobs without<br>
 installing the main Gemfile bundle.</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
   <li>
@@ -238,7 +274,7 @@ so release CI monitoring does not report intentionally skipped engine<br>
 workflows as failures.</li>
 </ul>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
   <li>Added branch coverage for hash accessor stubbing edge cases so the suite meets<br>
@@ -256,7 +292,7 @@ its 100% branch coverage release threshold.</li>
   <li>80.00% documented</li>
 </ul>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
   <li>
@@ -279,7 +315,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>80.00% documented</li>
 </ul>
 
-<h3 id="added-2">Added</h3>
+<h3 id="added-3">Added</h3>
 
 <ul>
   <li>
@@ -297,7 +333,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
 <code>Version</code> module, with backwards compatibility for deprecated <code>VERSION</code> constant</li>
 </ul>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
   <li>Bad links in documentation</li>
@@ -316,7 +352,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>85.71% documented</li>
 </ul>
 
-<h3 id="added-3">Added</h3>
+<h3 id="added-4">Added</h3>
 
 <ul>
   <li>Discord notifications for CI, issues, pulls, etc</li>
@@ -340,7 +376,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>85.71% documented</li>
 </ul>
 
-<h3 id="added-4">Added</h3>
+<h3 id="added-5">Added</h3>
 
 <ul>
   <li>More documentation</li>
@@ -369,7 +405,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>85.71% documented</li>
 </ul>
 
-<h3 id="added-5">Added</h3>
+<h3 id="added-6">Added</h3>
 
 <ul>
   <li>
@@ -407,7 +443,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
 </li>
 </ul>
 
-<h3 id="added-6">Added</h3>
+<h3 id="added-7">Added</h3>
 
 <ul>
   <li>support for values_at (@darhazer)</li>
@@ -431,7 +467,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>Moved from master to main default branch</li>
 </ul>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
   <li>README Badges (CI status)</li>
@@ -445,7 +481,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
 </li>
 </ul>
 
-<h3 id="added-7">Added</h3>
+<h3 id="added-8">Added</h3>
 
 <ul>
   <li>negated matchers</li>
