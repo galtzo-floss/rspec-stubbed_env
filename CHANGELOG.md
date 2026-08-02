@@ -52,16 +52,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
-- kettle-jem-template-20260729-005 - Gemspec metadata now publishes this
-  project's RubyForum tag as `mailing_list_uri`, and support docs link to the
-  tagged RubyForum community alongside Discord.
-
 ### Fixed
-
-- kettle-jem-template-20260729-002 - VersionGem bootstrap now preserves
-  and templates dedicated `version_gem.rb` entrypoints even when the gemspec
-  dependency is intentionally omitted, and generated anonymous-loader specs
-  cover both `version.rb` and `version_gem.rb`.
 
 - kettle-jem-template-20260729-003 - Old-Ruby gems below the VersionGem runtime
   floor now get managed minimal `version.rb` files and anonymous-loader version
@@ -163,18 +154,12 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
-- kettle-jem-template-20260716-001 - Shim gemspec manifests now include
-  `LICENSE.md` instead of nonexistent `LICENSE.txt`.
 - kettle-jem-template-20260716-002 - Generated gemspec manifests now ship fewer
   repository-only files by default to reduce downstream distro packaging churn.
-- kettle-jem-template-20260720-001 - Generated READMEs can now render
-  template-managed corporate sponsor logos from project or family config.
 - kettle-jem-template-20260720-002 - Generated development Gemfiles now use the
   released `tree_sitter_language_pack` gem 1.13.3 or newer by default.
 - kettle-jem-template-20260720-003 - Generated StructuredMerge Git diff driver
   config now uses the installed `smorg-rb` Ruby driver name.
-- kettle-jem-template-20260720-004 - Generated multi-engine workflow files now
-  omit JRuby and TruffleRuby jobs when project config declares MRI-only engines.
 - kettle-jem-template-20260720-005 - Generated README Support & Community rows
   now include a RubyForum help badge.
 - kettle-jem-template-20260725-001 - Generated JRuby and TruffleRuby workflow
