@@ -130,7 +130,7 @@ hide_env('SESSION_SECRET')
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 2.5", ">= 2.5.13")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 2.5", ">= 2.5.16")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
@@ -145,12 +145,12 @@ hide_env('SESSION_SECRET')
   # Loads version files in anonymous namespaces for coverage without constant redefinition warnings.
   spec.add_development_dependency("anonymous_loader", "~> 0.1", ">= 0.1.3")         # ruby >= 2.2.0
   spec.add_development_dependency("appraisal2", "~> 3.2", ">= 3.2.0")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
-  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.17")            # ruby >= 2.4
-  spec.add_development_dependency("turbo_tests2", "~> 3.2", ">= 3.2.3")           # ruby >= 2.4.0, default kettle-test runner
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.18")            # ruby >= 2.4
+  spec.add_development_dependency("turbo_tests2", "~> 3.2", ">= 3.2.4")           # ruby >= 2.4.0, default kettle-test runner
 
   # Releasing
   spec.add_development_dependency("ruby-progressbar", "~> 1.13")                    # ruby >= 0
-  spec.add_development_dependency("stone_checksums", "~> 1.0", ">= 1.0.7")          # ruby >= 2.2.0
+  spec.add_development_dependency("stone_checksums", "~> 1.0", ">= 1.0.8")          # ruby >= 2.2.0
 
   # Development tasks
   # The cake is a lie. erb v2.2, the oldest release, was never compatible with Ruby 2.3.

@@ -26,52 +26,21 @@
       ]
     }
   ],
+  ":vendored_gems_env => \"VENDORED_GEMS\",\n:vendor_gem_dir_env => \"VENDOR_GEM_DIR\",": [
+    {
+      "file": "gemfiles/modular/templating_local.gemfile",
+      "lines": [
+        75,
+        86
+      ]
+    }
+  ],
   "I do not recommend the _global_ approach, as it results in a loss of clarity\non which tests are testing ENV-based behaviors.  Here's a foot-gun if you want it.": [
     {
       "file": "README.md",
       "lines": [
         257,
         316
-      ]
-    }
-  ],
-  "appraisal: \"dep-heads\"\nexec_cmd: \"kettle-test\"": [
-    {
-      "file": ".github/workflows/dep-heads.yml",
-      "lines": [
-        43,
-        100,
-        157
-      ]
-    }
-  ],
-  "appraisal: \"head\"\nexec_cmd: \"kettle-test\"": [
-    {
-      "file": ".github/workflows/heads.yml",
-      "lines": [
-        43,
-        104,
-        162
-      ]
-    }
-  ],
-  "exec_cmd: \"kettle-test\"\n# Run directly from the generated appraisal Gemfile so setup-ruby": [
-    {
-      "file": ".github/workflows/dep-heads.yml",
-      "lines": [
-        44,
-        101,
-        158
-      ]
-    }
-  ],
-  "exec_cmd: \"kettle-test\"\nrubygems: default": [
-    {
-      "file": ".github/workflows/heads.yml",
-      "lines": [
-        44,
-        105,
-        163
       ]
     }
   ]
