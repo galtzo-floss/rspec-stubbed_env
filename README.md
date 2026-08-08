@@ -165,6 +165,11 @@ gem install rspec-stubbed_env
 
 ## ⚙️ Configuration
 
+Configure RSpec to use the `:expect` syntax, then require
+`rspec/stubbed_env` from the spec helper. The gem has no global ENV list: each
+example declares the keys it stubs or hides, so restoration remains scoped to
+that example.
+
 ## 🔧 Basic Usage
 
 You must configure RSpec to use the `:expect` syntax, or some compatible alternative.
