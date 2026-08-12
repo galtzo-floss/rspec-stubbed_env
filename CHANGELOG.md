@@ -29,6 +29,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Apply kettle-jem templates: updated 9 project files across code and tests (2), configuration (1), dependencies (2), documentation (1), other (3).
 
+- Prepare project for kettle-jem templates: updated 4 project files across dependencies (4).
+
 ### Deprecated
 
 ### Removed
