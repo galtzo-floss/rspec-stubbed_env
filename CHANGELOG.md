@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.0.13] - 2026-08-12
+
+- TAG: [v1.0.13][1.0.13t]
+- COVERAGE: 100.00% -- 94/94 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 19/19 branches in 5 files
+- 100.00% documented
+
+### Changed
+
 - kettle-jem-template-20260801-001 - Generated README gem dashboard links now
   use ClickGems instead of BestGems.
 
@@ -31,9 +48,7 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Prepare project for kettle-jem templates: updated 4 project files across dependencies (4).
 
-### Deprecated
-
-### Removed
+- Apply kettle-jem templates: updated 1 project file across code and tests (1).
 
 ### Fixed
 
@@ -49,8 +64,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
   preserving comments and trailing commas during template updates.
-
-### Security
 
 ## [1.0.12] - 2026-07-31
 
@@ -316,7 +329,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.12...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.13...HEAD
+[1.0.13]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.12...v1.0.13
+[1.0.13t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.13
 [1.0.12]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.11...v1.0.12
 [1.0.12t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.12
 [1.0.11]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.10...v1.0.11
