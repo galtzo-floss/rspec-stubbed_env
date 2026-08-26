@@ -650,7 +650,7 @@ CHECKSUMS
   bash-merge (7.1.4)
   benchmark (0.5.0)
   bigdecimal (4.1.2)
-  bundler (4.0.17) sha256=214e21431b5665dd2f99df8a5511c6b151d7a72e8015c8b38f8b775b61cbb6c1
+  bundler (4.0.17)
   bundler-audit (0.9.3)
   cgi (0.5.2)
   citrus (3.0.2)
