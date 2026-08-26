@@ -3,8 +3,8 @@
     {
       "file": "README.md",
       "lines": [
-        193,
-        276
+        195,
+        278
       ]
     }
   ],
@@ -12,8 +12,8 @@
     {
       "file": "README.md",
       "lines": [
-        192,
-        275
+        194,
+        277
       ]
     }
   ],
@@ -26,21 +26,12 @@
       ]
     }
   ],
-  ":vendored_gems_env => \"VENDORED_GEMS\",\n:vendor_gem_dir_env => \"VENDOR_GEM_DIR\",": [
-    {
-      "file": "gemfiles/modular/templating_local.gemfile",
-      "lines": [
-        80,
-        91
-      ]
-    }
-  ],
   "I do not recommend the _global_ approach, as it results in a loss of clarity\non which tests are testing ENV-based behaviors.  Here's a foot-gun if you want it.": [
     {
       "file": "README.md",
       "lines": [
-        262,
-        321
+        264,
+        323
       ]
     }
   ]
