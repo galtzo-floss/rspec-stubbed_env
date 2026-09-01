@@ -130,7 +130,7 @@ hide_env('SESSION_SECRET')
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 3.0", ">= 3.0.24")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 3.0", ">= 3.0.27")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
