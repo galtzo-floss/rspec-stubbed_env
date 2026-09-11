@@ -29,6 +29,7 @@ template_state:
     kettle-jem/template:
     - ".simplecov"
     - Gemfile
+    - Rakefile
     - gemfiles/modular/benchmark/vHEAD.gemfile
     - gemfiles/modular/changelog.gemfile
     - gemfiles/modular/coverage.gemfile
