@@ -34,5 +34,14 @@
         323
       ]
     }
+  ],
+  "exec_cmd: \"kettle-test\"\nrubygems: latest": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        43,
+        49
+      ]
+    }
   ]
 }
