@@ -8,6 +8,24 @@
       ]
     }
   ],
+  "- [kc] kettle-jem/prepare: updated 18 project files:\n- dependencies (18)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        25,
+        96
+      ]
+    }
+  ],
+  "- code and tests (2)\n- dependencies (1)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        29,
+        56
+      ]
+    }
+  ],
   "- is opt-in, via a shared context, rather than global.\n- *does not* affect the real ENV at all.  It is a true stub.": [
     {
       "file": "README.md",
