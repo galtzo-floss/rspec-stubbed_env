@@ -3,17 +3,8 @@
     {
       "file": "README.md",
       "lines": [
-        195,
-        278
-      ]
-    }
-  ],
-  "- [kc] kettle-jem/prepare: updated 18 project files:\n- dependencies (18)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        25,
-        96
+        212,
+        295
       ]
     }
   ],
@@ -21,8 +12,8 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        29,
-        56
+        30,
+        57
       ]
     }
   ],
@@ -30,8 +21,17 @@
     {
       "file": "README.md",
       "lines": [
-        194,
-        277
+        211,
+        294
+      ]
+    }
+  ],
+  "- ruby: \"ruby\"\nappraisal: \"current\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        40,
+        46
       ]
     }
   ],
@@ -48,8 +48,17 @@
     {
       "file": "README.md",
       "lines": [
-        264,
-        323
+        281,
+        340
+      ]
+    }
+  ],
+  "config: .licenserc.yaml\nmode: \"check\"": [
+    {
+      "file": ".github/workflows/license-eye.yml",
+      "lines": [
+        49,
+        62
       ]
     }
   ],
