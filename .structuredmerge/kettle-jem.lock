@@ -28,9 +28,14 @@ template_state:
     - gemfiles/modular/templating_local.gemfile
     - rspec-stubbed_env.gemspec
     kettle-jem/template:
+    - ".github/workflows/current.yml"
+    - ".github/workflows/heads.yml"
+    - ".github/workflows/license-eye.yml"
     - ".github/workflows/templating.yml"
+    - ".github/workflows/truffleruby-23.0.yml"
     - ".simplecov"
     - CONTRIBUTING.md
+    - README.md
     - Rakefile
     - gemfiles/modular/rspec.gemfile
     - spec/rspec/stubbed_env/version_spec.rb
