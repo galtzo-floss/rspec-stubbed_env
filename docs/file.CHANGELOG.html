@@ -84,15 +84,15 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
-<h2 id="1017---2026-10-12">
-<a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.16...v1.0.17">1.0.17</a> - 2026-10-12</h2>
+<h2 id="1017---2026-10-13">
+<a href="https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.16...v1.0.17">1.0.17</a> - 2026-10-13</h2>
 
 <ul>
   <li>TAG: <a href="https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.17">v1.0.17</a>
 </li>
-  <li>COVERAGE: 100.00% – 94/94 lines in 5 files</li>
-  <li>BRANCH COVERAGE: 100.00% – 19/19 branches in 5 files</li>
-  <li>100.00% documented</li>
+  <li>COVERAGE: 100.00% – 84/84 lines in 5 files</li>
+  <li>BRANCH COVERAGE: 100.00% – 31/31 branches in 5 files</li>
+  <li>75.00% documented</li>
 </ul>
 
 <h3 id="changed-1">Changed</h3>
@@ -113,6 +113,12 @@ Please file a bug if you notice a violation of semantic versioning.</p>
       <li>workflows (11)</li>
     </ul>
   </li>
+</ul>
+
+<h3 id="fixed-1">Fixed</h3>
+
+<ul>
+  <li>Re-stubbing the same ENV key across examples no longer raises “message expectation … has already been invoked and cannot be modified further”: ENV accessors are stubbed with one block-backed receive per accessor reading a mutation ledger, instead of per-key .with(key) expectations that collide after invocation (observed as a seed-dependent failure on kettle-dev’s jruby-9.2 CI lane)</li>
 </ul>
 
 <h2 id="1016---2026-10-01">
@@ -243,7 +249,7 @@ use ClickGems instead of BestGems.</p>
   </li>
 </ul>
 
-<h3 id="fixed-1">Fixed</h3>
+<h3 id="fixed-2">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260801-002 - Generated RSpec helpers now normalize<br>
@@ -274,7 +280,7 @@ preserving comments and trailing commas during template updates.</li>
 
 <h3 id="added-2">Added</h3>
 
-<h3 id="fixed-2">Fixed</h3>
+<h3 id="fixed-3">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260729-003 - Old-Ruby gems below the VersionGem runtime<br>
@@ -296,7 +302,7 @@ even when the gemspec is loaded from another working directory.</li>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-3">Fixed</h3>
+<h3 id="fixed-4">Fixed</h3>
 
 <ul>
   <li>
@@ -322,7 +328,7 @@ failures against <code>gem.coop</code>.</p>
   <li>100.00% documented</li>
 </ul>
 
-<h3 id="fixed-4">Fixed</h3>
+<h3 id="fixed-5">Fixed</h3>
 
 <ul>
   <li>kettle-jem-template-20260728-004 - Generated dep-heads workflows now use the<br>
@@ -366,7 +372,7 @@ setup-ruby-flash planning and can prepare appraisal-only jobs without<br>
 installing the main Gemfile bundle.</li>
 </ul>
 
-<h3 id="fixed-5">Fixed</h3>
+<h3 id="fixed-6">Fixed</h3>
 
 <ul>
   <li>
@@ -433,7 +439,7 @@ so release CI monitoring does not report intentionally skipped engine<br>
 workflows as failures.</li>
 </ul>
 
-<h3 id="fixed-6">Fixed</h3>
+<h3 id="fixed-7">Fixed</h3>
 
 <ul>
   <li>Added branch coverage for hash accessor stubbing edge cases so the suite meets<br>
@@ -451,7 +457,7 @@ its 100% branch coverage release threshold.</li>
   <li>80.00% documented</li>
 </ul>
 
-<h3 id="fixed-7">Fixed</h3>
+<h3 id="fixed-8">Fixed</h3>
 
 <ul>
   <li>
@@ -492,7 +498,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
 <code>Version</code> module, with backwards compatibility for deprecated <code>VERSION</code> constant</li>
 </ul>
 
-<h3 id="fixed-8">Fixed</h3>
+<h3 id="fixed-9">Fixed</h3>
 
 <ul>
   <li>Bad links in documentation</li>
@@ -626,7 +632,7 @@ supplied by the modular <code>x_std_libs</code> gemfiles.</p>
   <li>Moved from master to main default branch</li>
 </ul>
 
-<h3 id="fixed-9">Fixed</h3>
+<h3 id="fixed-10">Fixed</h3>
 
 <ul>
   <li>README Badges (CI status)</li>
