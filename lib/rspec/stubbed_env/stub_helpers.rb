@@ -56,7 +56,7 @@ module RSpec
       end
 
       def env_stubbed?
-        ENV.fetch(STUBBED_KEY, nil)
+        instance_variable_defined?(:@__rspec_stubbed_env_mutations) && !@__rspec_stubbed_env_mutations.empty?
       end
 
       def init_stub

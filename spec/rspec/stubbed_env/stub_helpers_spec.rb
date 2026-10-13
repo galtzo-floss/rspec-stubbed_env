@@ -376,5 +376,21 @@ RSpec.describe(RSpec::StubbedEnv::StubHelpers) do
       hide_env("KETTLE_HIDDEN_KEY")
       expect { ENV.fetch("KETTLE_HIDDEN_KEY") }.to(raise_error(KeyError))
     end
+
+    it "fetch default block covers a nil-stubbed key" do
+      stub_env("KETTLE_NIL_STUBBED_KEY" => nil)
+      expect(ENV.fetch("KETTLE_NIL_STUBBED_KEY") { "blk" }).to(eq("blk"))
+    end
+
+    it "repeat calls skip re-initialization when the env is already stubbed" do
+      stub_env("KETTLE_REPEAT_KEY" => "one")
+      hide_env("KETTLE_REPEAT_KEY")
+      stub_env("KETTLE_REPEAT_KEY" => "two")
+      stub_env_hash_accessors
+      hide_env("KETTLE_REPEAT_KEY")
+      stub_env("KETTLE_REPEAT_KEY" => "two")
+      expect(ENV["KETTLE_REPEAT_KEY"]).to(eq("two"))
+      expect(ENV.to_h.fetch("KETTLE_REPEAT_KEY")).to(eq("two"))
+    end
   end
 end
