@@ -28,6 +28,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
+- Re-stubbing the same ENV key across examples no longer raises "message expectation ... has already been invoked and cannot be modified further": ENV accessors are stubbed with one block-backed receive per accessor reading a mutation ledger, instead of per-key .with(key) expectations that collide after invocation (observed as a seed-dependent failure on kettle-dev's jruby-9.2 CI lane)
+
 ### Security
 
 ## [1.0.17] - 2026-10-12

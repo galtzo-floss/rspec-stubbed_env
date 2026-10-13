@@ -322,4 +322,59 @@ RSpec.describe(RSpec::StubbedEnv::StubHelpers) do
       end
     end
   end
+
+  # Regression: per-key `.with(key)` expectations collided across examples —
+  # after one example invoked ENV.[] for a stubbed key, the next example's
+  # stub_env raised "message expectation ... has already been invoked and
+  # cannot be modified further". Stubs are now a ledger read by one
+  # block-backed receive per accessor, so re-stubbing is order-independent.
+  describe "re-stubbing the same key across examples" do
+    include_context "with stubbed env"
+
+    before { stub_env("KETTLE_RELEASE_SECRETS_PROVIDER" => nil) }
+
+    it "first example reads the stubbed key" do
+      expect(ENV["KETTLE_RELEASE_SECRETS_PROVIDER"]).to(be_nil)
+      expect(ENV.fetch("KETTLE_RELEASE_SECRETS_PROVIDER")).to(be_nil)
+      expect(ENV.fetch("KETTLE_RELEASE_SECRETS_PROVIDER", "d")).to(eq("d"))
+    end
+
+    it "second example re-stubs the same key without raising" do
+      expect(ENV["KETTLE_RELEASE_SECRETS_PROVIDER"]).to(be_nil)
+      expect(ENV.fetch("KETTLE_RELEASE_SECRETS_PROVIDER", "d")).to(eq("d"))
+    end
+
+    it "third example re-stubs the same key after reading it" do
+      expect(ENV["KETTLE_RELEASE_SECRETS_PROVIDER"]).to(be_nil)
+    end
+
+    it "passes through unstubbed keys" do
+      expect(ENV["HOME"]).to(eq(ENV.to_h.fetch("HOME")))
+      expect(ENV.fetch("HOME")).to(eq(ENV.to_h.fetch("HOME")))
+      expect(ENV.fetch("NO_SUCH_KEY_ELSEWHERE", "fallback")).to(eq("fallback"))
+      expect(ENV.values_at("HOME", "NO_SUCH_KEY_ELSEWHERE").first).to(eq(ENV.to_h.fetch("HOME")))
+    end
+  end
+
+  describe "hide vs stub-to-nil fetch semantics" do
+    include RSpec::StubbedEnv::HideHelpers
+
+    include_context "with stubbed env"
+
+    it "a hidden key raises on bare fetch, honors default and block" do
+      stub_env("KETTLE_HIDDEN_KEY" => "x")
+      hide_env("KETTLE_HIDDEN_KEY")
+      expect(ENV["KETTLE_HIDDEN_KEY"]).to(be_nil)
+      expect { ENV.fetch("KETTLE_HIDDEN_KEY") }.to(raise_error(KeyError))
+      expect(ENV.fetch("KETTLE_HIDDEN_KEY", "d")).to(eq("d"))
+      expect(ENV.fetch("KETTLE_HIDDEN_KEY") { "b" }).to(eq("b"))
+      expect(ENV.values_at("KETTLE_HIDDEN_KEY", "HOME").first).to(be_nil)
+    end
+
+    it "hiding still works after stubbing the same key" do
+      stub_env("KETTLE_HIDDEN_KEY" => nil)
+      hide_env("KETTLE_HIDDEN_KEY")
+      expect { ENV.fetch("KETTLE_HIDDEN_KEY") }.to(raise_error(KeyError))
+    end
+  end
 end

@@ -48,29 +48,6 @@ module RSpec
       def add_hidden_key(key)
         key = key.to_s # Support symbols by forcing to string
         remember_hidden_key(key)
-        hide_brackets(key)
-        hide_fetch(key)
-        hide_values_at
-      end
-
-      def hide_brackets(key)
-        allow(ENV).to(receive(:[]).with(key).and_return(nil))
-      end
-
-      def hide_fetch(key)
-        allow(ENV).to(receive(:fetch).with(key)) do |_|
-          raise KeyError, "key not found: \"#{key}\""
-        end
-        allow(ENV).to(receive(:fetch).with(key, anything)) do |_, default_val|
-          default_val
-        end
-      end
-
-      # Rides on the fetch hider!
-      def hide_values_at
-        allow(ENV).to(receive(:values_at)) do |*args|
-          args.map { |arg| ENV.fetch(arg, nil) }
-        end
       end
     end
   end

@@ -55,46 +55,48 @@ module RSpec
         allow(ENV).to(receive(:to_h) { mixed_env_hash })
       end
 
-      private
-
-      STUBBED_KEY = "__STUBBED__"
-
-      def add_stubbed_value(key, value, track: true)
-        key = key.to_s # Support symbols by forcing to string
-        remember_stubbed_value(key, value) if track
-        allow_brackets(key, value)
-        allow_fetch(key, value)
-        allow_values_at
-      end
-
-      def allow_brackets(key, value)
-        allow(ENV).to(receive(:[]).with(key).and_return(value))
-      end
-
-      def allow_fetch(key, value)
-        allow(ENV).to(receive(:fetch).with(key).and_return(value))
-        allow(ENV).to(receive(:fetch).with(key, anything)) do |_, default_val|
-          value || default_val
-        end
-      end
-
-      # Rides on the fetch stub!
-      def allow_values_at
-        allow(ENV).to(receive(:values_at)) do |*args|
-          args.map { |arg| ENV.fetch(arg, nil) }
-        end
-      end
-
       def env_stubbed?
         ENV.fetch(STUBBED_KEY, nil)
       end
 
       def init_stub
         @__rspec_stubbed_env_mutations ||= []
-        allow(ENV).to(receive(:[]).and_call_original)
-        allow(ENV).to(receive(:fetch).and_call_original)
-        allow(ENV).to(receive(:values_at).and_call_original)
+        install_env_accessors
         add_stubbed_value(STUBBED_KEY, true, :track => false)
+      end
+
+      # Install ONE block-backed receive per accessor instead of per-key
+      # `.with(key)` expectations. Per-key expectations collide when the same
+      # key is stubbed again in a later example after the earlier expectation
+      # has been invoked — rspec-mocks raises "message expectation ... has
+      # already been invoked and cannot be modified further" (observed as a
+      # seed-dependent CI failure). The blocks read the mutation ledger at
+      # call time, so later stub_env / hide_env calls only append to it.
+      def install_env_accessors
+        allow(ENV).to(receive(:[]) { |key| mixed_env_hash[key] })
+        allow(ENV).to(receive(:fetch) do |key, *rest, &default_block|
+          hidden = @__rspec_stubbed_env_mutations.reverse.any? do |op, k, _|
+            op == :hide && k == key
+          end
+          value = mixed_env_hash[key]
+          if hidden && value.nil?
+            unless rest.empty?
+              next rest.first
+            end
+            next default_block.call if default_block
+
+            raise KeyError, %(key not found: "#{key}")
+          end
+          if value.nil?
+            next rest.first unless rest.empty?
+            next default_block.call if default_block
+          end
+
+          value
+        end)
+        allow(ENV).to(receive(:values_at)) do |*args|
+          args.map { |arg| mixed_env_hash[arg] }
+        end
       end
 
       def remember_stubbed_value(key, value)
@@ -117,6 +119,15 @@ module RSpec
             hash.delete(key)
           end
         end
+      end
+
+      private
+
+      STUBBED_KEY = "__STUBBED__"
+
+      def add_stubbed_value(key, value, track: true)
+        key = key.to_s # Support symbols by forcing to string
+        remember_stubbed_value(key, value) if track
       end
     end
   end
