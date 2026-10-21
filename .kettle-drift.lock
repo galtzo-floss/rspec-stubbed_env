@@ -13,26 +13,34 @@
       "file": "CHANGELOG.md",
       "lines": [
         25,
-        115
+        117
       ]
     }
   ],
-  "- code and tests (2)\n- dependencies (1)": [
+  "- [kc] kettle-jem/template: updated 21 project files:\n- code and tests (2)": [
+    {
+      "file": "CHANGELOG.md",
+      "lines": [
+        28,
+        120
+      ]
+    }
+  ],
+  "- code and tests (2)\n- dependencies (18)": [
     {
       "file": "CHANGELOG.md",
       "lines": [
         29,
-        56,
-        75
+        121
       ]
     }
   ],
-  "- dependencies (1)\n- other (1)": [
+  "- dependencies (18)\n- other (1)": [
     {
       "file": "CHANGELOG.md",
       "lines": [
         30,
-        76
+        122
       ]
     }
   ],
@@ -49,8 +57,8 @@
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        40,
-        46
+        41,
+        47
       ]
     }
   ],
@@ -85,8 +93,8 @@
     {
       "file": ".github/workflows/current.yml",
       "lines": [
-        43,
-        49
+        44,
+        50
       ]
     }
   ]
