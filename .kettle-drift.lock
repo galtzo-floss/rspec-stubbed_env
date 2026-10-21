@@ -13,16 +13,7 @@
       "file": "CHANGELOG.md",
       "lines": [
         25,
-        117
-      ]
-    }
-  ],
-  "- [kc] kettle-jem/template: updated 21 project files:\n- code and tests (2)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        28,
-        120
+        118
       ]
     }
   ],
@@ -31,7 +22,7 @@
       "file": "CHANGELOG.md",
       "lines": [
         29,
-        121
+        122
       ]
     }
   ],
@@ -40,7 +31,7 @@
       "file": "CHANGELOG.md",
       "lines": [
         30,
-        122
+        123
       ]
     }
   ],
