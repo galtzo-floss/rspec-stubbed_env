@@ -1,4 +1,10 @@
 {
+  "gemfiles/modular/style_local.gemfile:1620043544": [
+    [71, 27, 2, "Lint/Syntax: unexpected token error\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 5858765],
+    [74, 21, 2, "Lint/Syntax: unexpected token kDO_BLOCK\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 5860750],
+    [77, 1, 6, "Lint/Syntax: unexpected token kRESCUE\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 2123792210],
+    [80, 1, 3, "Lint/Syntax: unexpected token kEND\n(Using Ruby 2.0 parser; configure using `TargetRubyVersion` parameter, under `AllCops`)", 193405706]
+  ],
   "spec/rspec/stubbed_env/hide_helpers_spec.rb:755880616": [
     [31, 9, 44, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 423251009],
     [32, 9, 44, "Env/Assign: Mock the return value of an ENV variable instead of assigning to ENV directly.", 3891040897],

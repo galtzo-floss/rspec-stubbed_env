@@ -3,17 +3,8 @@
     {
       "file": "README.md",
       "lines": [
-        212,
-        295
-      ]
-    }
-  ],
-  "- [kc] kettle-jem/prepare: updated 18 project files:\n- dependencies (18)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
-        25,
-        118
+        179,
+        262
       ]
     }
   ],
@@ -21,17 +12,8 @@
     {
       "file": "CHANGELOG.md",
       "lines": [
-        29,
-        122
-      ]
-    }
-  ],
-  "- dependencies (18)\n- other (1)": [
-    {
-      "file": "CHANGELOG.md",
-      "lines": [
         30,
-        123
+        124
       ]
     }
   ],
@@ -39,8 +21,8 @@
     {
       "file": "README.md",
       "lines": [
-        211,
-        294
+        178,
+        261
       ]
     }
   ],
@@ -66,8 +48,8 @@
     {
       "file": "README.md",
       "lines": [
-        281,
-        340
+        248,
+        307
       ]
     }
   ],
@@ -86,6 +68,24 @@
       "lines": [
         44,
         50
+      ]
+    }
+  ],
+  "out != \"\" { print > out }\n' \"$bundle\"": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        95,
+        124
+      ]
+    }
+  ],
+  "subject=\"$(openssl x509 -in \"$file\" -noout -subject 2>/dev/null || true)\"\nif [ -n \"$subject\" ] && matches \"$subject\"; then": [
+    {
+      "file": ".github/workflows/current.yml",
+      "lines": [
+        103,
+        127
       ]
     }
   ]

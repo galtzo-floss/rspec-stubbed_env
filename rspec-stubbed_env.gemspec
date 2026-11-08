@@ -97,7 +97,7 @@ hide_env('SESSION_SECRET')
     *enumerate_package_files.call("lib"),
     # Executables and executable support scripts
     *enumerate_package_files.call("exe")
-  ]
+  ].grep_v(%r{\.(?:bundle|so|dylib|dll|o|a)\z})
   spec.rdoc_options += [
     "--title",
     "#{spec.name} - #{spec.summary}",
@@ -128,7 +128,7 @@ hide_env('SESSION_SECRET')
   #       and preferably a modular one (see gemfiles/modular/*.gemfile).
 
   # Dev, Test, & Release Tasks
-  spec.add_development_dependency("kettle-dev", "~> 3.1", ">= 3.1.20")             # ruby >= 2.4
+  spec.add_development_dependency("kettle-dev", "~> 3.1", ">= 3.1.28")             # ruby >= 2.4
 
   # Security
   spec.add_development_dependency("bundler-audit", "~> 0.9.3")                      # ruby >= 2.0.0
@@ -141,9 +141,9 @@ hide_env('SESSION_SECRET')
 
   # Testing
   # Loads version files in anonymous namespaces for coverage without constant redefinition warnings.
-  spec.add_development_dependency("anonymous_loader", "~> 0.1", ">= 0.1.3")         # ruby >= 2.2.0
+  spec.add_development_dependency("anonymous_loader", "~> 0.1", ">= 0.1.5")         # ruby >= 2.2.0
   spec.add_development_dependency("appraisal2", "~> 3.2", ">= 3.2.6")               # ruby >= 1.8.7, for testing against multiple versions of dependencies
-  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.27")            # ruby >= 2.4
+  spec.add_development_dependency("kettle-test", "~> 2.0", ">= 2.0.29")            # ruby >= 2.4
   spec.add_development_dependency("turbo_tests2", "~> 4.0", ">= 4.0.0")           # ruby >= 2.4.0, default kettle-test runner
 
   # Releasing
