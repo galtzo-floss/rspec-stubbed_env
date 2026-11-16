@@ -22,6 +22,23 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Changed
 
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [1.0.19] - 2026-11-15
+
+- TAG: [v1.0.19][1.0.19t]
+- COVERAGE: 100.00% -- 84/84 lines in 5 files
+- BRANCH COVERAGE: 100.00% -- 31/31 branches in 5 files
+- 75.00% documented
+
+### Changed
+
 - [kc] kettle-jem/prepare: updated 19 project files:
   - dependencies (19)
 
@@ -31,14 +48,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - documentation (1)
   - other (1)
   - workflows (8)
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [1.0.18] - 2026-11-09
 
@@ -439,7 +448,9 @@ Please file a bug if you notice a violation of semantic versioning.
 [@darhazer]: https://github.com/darhazer
 [@hosamaly]: https://github.com/hosamaly
 
-[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.18...HEAD
+[Unreleased]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.19...HEAD
+[1.0.19]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.18...v1.0.19
+[1.0.19t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.19
 [1.0.18]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.17...v1.0.18
 [1.0.18t]: https://github.com/galtzo-floss/rspec-stubbed_env/releases/tag/v1.0.18
 [1.0.17]: https://github.com/galtzo-floss/rspec-stubbed_env/compare/v1.0.16...v1.0.17
