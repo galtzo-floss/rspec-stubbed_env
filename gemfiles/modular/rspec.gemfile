@@ -1,0 +1,7 @@
+### rspec_junit_formatter
+# Appraisals eval the matching variant directly; this loader serves the plain Gemfile.
+if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.3")
+  eval_gemfile "rspec_junit_formatter/r3.3/v0.8.gemfile"
+else
+  eval_gemfile "rspec_junit_formatter/r2/v0.6.gemfile"
+end
